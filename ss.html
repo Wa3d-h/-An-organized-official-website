@@ -1,0 +1,543 @@
+ 
+	<?php 
+	 //require __DIR__ . '/template/header.php';
+	 //require 'auth/index.php';
+	session_start();
+	//require "../un1/clubs/ss.php";
+	//login requirements
+	//if(isset($_SESSION['student_idd']) ){
+	//header("location: dashboard/home");
+	//}
+	?>
+<!--
+	
+	if(isset($_SESSION['student_idd'])){
+		echo 'مسجل';
+	}else{
+		echo 'غير مسجل';
+
+	}
+	if(isset($_POST['submit'])){
+	$studentID=(filter_var($_POST['studentID'],FILTER_SANITIZE_STRING));
+	$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+	$sql_check="select * from students where student_id='$studentID'";
+	if(mysqli_num_rows($q=mysqli_query($con,$sql_check)) > 0){
+		while($row=mysqli_fetch_array($q)){
+			$student_id = $row['student_id'];
+		}
+		$_SESSION['student_idd']= $student_id;
+		echo "<script>location.href = 'dashboard/home'</script>";
+		}else{
+			$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+		}
+		// }else{
+		//     $fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+		}
+	//}
+	//}
+	?>
+-->
+
+<!DOCTYPE html>
+<html lang="en-US"> <!-- ar dir="ltr" class="no-js" -->
+<head>
+	<title>تسجيل الدخول</title>
+  	<meta charset="UTF-8">
+<!--  <link rel="shortcut icon" href="assets/ico/favicon.png">  -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  	
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		  crossorigin="anonymous" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="template/style.css">
+	<style>
+	/* Fonts */
+@import url("http://www.fontstatic.com/f=cocon-next-arabic");
+*{
+	
+	font-family:'cocon-next-arabic';
+	
+}
+	
+		.w-50{
+			width: 50%;
+		}
+		.clearfix{
+			clear: both;
+		}
+		
+		section {
+			padding: 60px 0;
+		}
+     
+		section .section-title {
+			text-align: center;
+			color: #007b5e;
+			margin-bottom: 50px;
+			text-transform: uppercase;
+		}
+		#tabs{
+			color: #eee;
+		}
+		#tabs h6.section-title{
+			color: #eee;
+		}
+
+		#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+			color: #f3f3f3;
+			background-color: transparent;
+			border-color: transparent transparent #f3f3f3;
+			border-bottom: 4px solid !important;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#tabs .nav-tabs .nav-link {
+			border: 1px solid transparent;
+			border-top-left-radius: .25rem;
+			border-top-right-radius: .25rem;
+			color: #eee;
+			font-size: 20px;
+		}
+		a{
+	    color:#fff;
+		}
+		</style>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/utilities.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700%7CNunito:300,400,600,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<script src="js/modernizr-custom.js"></script>
+
+</head>
+<body style="background: linear-gradient(#689f38, #d4e157);">
+<!-- ..html -->	
+<main id="content">
+	<div class="site-slider">
+		<div class="site-slider-inner">
+
+				<div class="site-slider-item" id="0" data-navbar-style="dark" data-arrow-nav-style="light">
+					<div class="vh-105 gradient-custom">
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+									<div class="card bg-dark text-white" style="border-radius: 1rem;">
+										<div class="card-body p-5 text-center">
+											<div class="mb-md-5 mt-md-4 pb-5">	
+												<h2 class="fw-bold mb-2 text-uppercase"> تـسـجـيـل  الـدخـول </h2>
+												<div class="logo">
+													<img src="https://drive.google.com/uc?export=view&id=1TQYGNL3WpUn13U79u9-45B3Kgv8QWoeG" alt="error" width="140"height="130" alt="no">
+												</div>
+												<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link active  go-to" id="" data-toggle="tab" href="#0" role="tab" aria-controls="" aria-selected="true">عضو</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#1" role="tab" aria-controls="" aria-selected="true">مجلس الادارة</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#2" role="tab" aria-controls="" aria-selected="true">الأقسام</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#3" role="tab" aria-controls="" aria-selected="true">الموراد</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#4" role="tab" aria-controls="" aria-selected="true">تسجيل</a>	
+												</div><br>
+												<h2 class="fw-bold mb-2 text-uppercase">   </h2>
+												<!--
+												<php 
+												if(isset($_POST['d'])){
+												$studentID=(filter_var($_POST['studentID'],FILTER_SANITIZE_STRING));
+												$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+												$sql_check="select * from adminstrator where admin_id='$studentID'";
+												if(mysqli_num_rows($q=mysqli_query($con,$sql_check)) > 0){
+													while($row=mysqli_fetch_array($q)){
+														$student_id = $row['admin_id'];
+														$passfdb = $row['password'];
+													}
+													$_SESSION['hr_id']= $student_id;
+													echo "<script>location.href = 'adminstrator/index'</script>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}else{
+														$fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}
+												?><php echo $msg_login;?>-->
+												
+												<form action="" method="post">
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName">  رقم عضو الإدارة </label>
+													<input type="number" name="studentID" placeholder=" رقم العضوية " id="" class="form-control form-control-lg" required>
+												</div>
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName"> كلمة المرور </label>
+													<input type="password" name="password" placeholder="كلمة المرور" id="" class="form-control form-control-lg" required>
+												</div>
+												<input class="btn btn-outline-light btn-lg px-5" type="submit" name="d" value="تسجيل الدخول"><br><br>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="site-slider-item" id="1" data-navbar-style="dark" data-arrow-nav-style="light">
+					<div class="vh-101 gradient-custom">
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+									<div class="card bg-dark text-white" style="border-radius: 1rem;">
+										<div class="card-body p-5 text-center">
+											<div class="mb-md-5 mt-md-4 pb-5">	
+												<h2 class="fw-bold mb-2 text-uppercase"> تـسـجـيـل  الـدخـول </h2>
+												<div class="logo">
+													<img src="https://drive.google.com/uc?export=view&id=1TQYGNL3WpUn13U79u9-45B3Kgv8QWoeG" alt="error" width="140"height="130" alt="no">
+												</div>
+												<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#0" role="tab" aria-controls="" aria-selected="true">عضو</a>
+													<a class="nav-item nav-link active  go-to" id="" data-toggle="tab" href="#1" role="tab" aria-controls="" aria-selected="true">مجلس الادارة</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#2" role="tab" aria-controls="" aria-selected="true">الأقسام</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#3" role="tab" aria-controls="" aria-selected="true">الموراد</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#4" role="tab" aria-controls="" aria-selected="true">تسجيل</a>	
+												</div><br>
+												<h2 class="fw-bold mb-2 text-uppercase">   </h2>
+												<!--
+												<php 
+												if(isset($_POST['d'])){
+												$studentID=(filter_var($_POST['studentID'],FILTER_SANITIZE_STRING));
+												$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+												$sql_check="select * from adminstrator where admin_id='$studentID'";
+												if(mysqli_num_rows($q=mysqli_query($con,$sql_check)) > 0){
+													while($row=mysqli_fetch_array($q)){
+														$student_id = $row['admin_id'];
+														$passfdb = $row['password'];
+													}
+													$_SESSION['hr_id']= $student_id;
+													echo "<script>location.href = 'adminstrator/index'</script>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}else{
+														$fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}
+												?><php echo $msg_login;?>-->
+												
+												<form action="" method="post">
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName">  رقم عضو الإدارة </label>
+													<input type="number" name="studentID" placeholder=" رقم العضوية " id="" class="form-control form-control-lg" required>
+												</div>
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName"> كلمة المرور </label>
+													<input type="password" name="password" placeholder="كلمة المرور" id="" class="form-control form-control-lg" required>
+												</div>
+												<input class="btn btn-outline-light btn-lg px-5" type="submit" name="d" value="تسجيل الدخول"><br><br>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="site-slider-item" id="2" data-navbar-style="dark" data-arrow-nav-style="light">
+					<div class="vh-101 gradient-custom">
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+									<div class="card bg-dark text-white" style="border-radius: 1rem;">
+										<div class="card-body p-5 text-center">
+											<div class="mb-md-5 mt-md-4 pb-5">
+												<h2 class="fw-bold mb-2 text-uppercase"> تـسـجـيـل  الـدخـول </h2>
+												<div class="logo">
+													<img src="https://drive.google.com/uc?export=view&id=1TQYGNL3WpUn13U79u9-45B3Kgv8QWoeG" alt="error" width="140"height="130" alt="no">
+												</div>
+												<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#0" role="tab" aria-controls="" aria-selected="true">عضو</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#1" role="tab" aria-controls="" aria-selected="true">مجلس الادارة </a>
+													<a class="nav-item nav-link active go-to" id="" data-toggle="tab" href="#2" role="tab" aria-controls="" aria-selected="true">الأقسام</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#3" role="tab" aria-controls="" aria-selected="true">الموراد</a>
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#4" role="tab" aria-controls="" aria-selected="true">تسجيل</a>	
+												</div><br>
+											
+												
+											
+												<h2 class="fw-bold mb-2 text-uppercase">   </h2>
+												<!--
+												<php 
+													if(isset($_POST['d'])){
+													$studentID=(filter_var($_POST['studentID'],FILTER_SANITIZE_STRING));
+													$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+													$sql_check="select * from activity_supervisor where super_id='$studentID'";
+													if(mysqli_num_rows($q=mysqli_query($con,$sql_check)) > 0){
+														while($row=mysqli_fetch_array($q)){
+															$student_id = $row['super_id'];
+															$passfdb = $row['password'];
+														}
+														//if(password_verify($password,$passfdb)){}
+														$_SESSION['hr_id']= $student_id;
+														echo "<script>location.href = 'activites/index'</script>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}else{
+														$fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}
+												?><php echo $msg_login;?>-->
+													
+												<form action="" method="post">
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName">  رقم ممثل القسم </label>
+													<input type="number" name="studentID" placeholder=" رقم العضوية " id="" class="form-control form-control-lg" required>
+												</div>
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName"> كلمة المرور </label>
+													<input type="password" name="password" placeholder="كلمة المرور" id="" class="form-control form-control-lg" required>
+												</div>
+												<input class="btn btn-outline-light btn-lg px-5" type="submit" name="d" value="تسجيل الدخول">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="site-slider-item" id="3" data-navbar-style="dark" data-arrow-nav-style="light">
+					<div class="vh-101 gradient-custom">
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+									<div class="card bg-dark text-white" style="border-radius: 1rem;">
+										<div class="card-body p-5 text-center">
+											<div class="mb-md-5 mt-md-4 pb-5">
+												<h2 class="fw-bold mb-2 text-uppercase"> تـسـجـيـل  الـدخـول </h2>
+												<div class="logo">
+													<img src="https://drive.google.com/uc?export=view&id=1TQYGNL3WpUn13U79u9-45B3Kgv8QWoeG" alt="error" width="140"height="130" alt="no">
+												</div>
+												<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#0" role="tab" aria-controls="" aria-selected="true">عضو</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#1" role="tab" aria-controls="" aria-selected="true">مجلس الادارة</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#2" role="tab" aria-controls="" aria-selected="true">الأقسام</a>
+													<a class="nav-item nav-link active go-to" id="" data-toggle="tab" href="#3" role="tab" aria-controls="" aria-selected="true">الموراد</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#4" role="tab" aria-controls="" aria-selected="true">تسجيل</a>	
+												</div><br>
+												<h2 class="fw-bold mb-2 text-uppercase">  </h2>
+												<!--
+												<php 
+													if(isset($_POSTS['d'])){
+													$studentID=(filter_var($_POST['studentID'],FILTER_SANITIZE_STRING));
+													$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+													$sql_check="select * from hr where hr_id='$studentID'";
+													if(mysqli_num_rows($q=mysqli_query($con,$sql_check)) > 0){
+														while($row=mysqli_fetch_array($q)){
+															$student_id = $row['hr_id'];
+															$passfdb = $row['password'];
+														}//if(password_verify($password,$passfdb)){}
+														$_SESSION['hr_id']= $student_id;
+														echo "<script>location.href = 'hr-dashboard/index'</script>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}else{
+														$fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+													}else{
+														$msg_login= "<div class='alert alert-danger'>عذراً ، خطأ في  الرقم أو كلمة المرور</div>";
+													}
+												?><php echo $msg_login;?>-->
+													
+												<form action="" method="posts">
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName">  رقم عضو الموارد البشرية </label>
+													<input type="number" name="studentID" placeholder ="رقم العضوية" id="" class="form-control form-control-lg" required>
+												</div>
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName"> كلمة المرور </label>
+													<input type="password" name="password" placeholder="كلمة المرور" id="" class="form-control form-control-lg" required>
+												</div>
+												<input class="btn btn-outline-light btn-lg px-5" type="submit" name="d" value="تسجيل الدخول"><br><br>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="site-slider-item" id="4" data-navbar-style="dark" data-arrow-nav-style="light">
+					<div class="vh-101 gradient-custom">
+						<div class="container py-5 h-100">
+							<div class="row d-flex justify-content-center align-items-center h-100">
+								<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+									<div class="card bg-dark text-white" style="border-radius: 1rem;">
+										<div class="card-body p-5 text-center">
+											<div class="mb-md-5 mt-md-4 pb-5">
+												<h2 class="fw-bold text-uppercase"> انـشـاء حـسـاب </h2>	
+												<div class="logo">
+													<img src="https://drive.google.com/uc?export=view&id=1TQYGNL3WpUn13U79u9-45B3Kgv8QWoeG" alt="error" width="140"height="130" alt="no">
+												</div>
+												<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link   go-to" id="" data-toggle="tab" href="#0" role="tab" aria-controls="" aria-selected="true" >عضو</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#1" role="tab" aria-controls="" aria-selected="true">مجلس الادارة</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#2" role="tab" aria-controls="" aria-selected="true">الأقسام</a>
+													<a class="nav-item nav-link  go-to" id="" data-toggle="tab" href="#3" role="tab" aria-controls="" aria-selected="true">الموراد</a>
+													<a class="nav-item nav-link active go-to" id="" data-toggle="tab" href="#4" role="tab" aria-controls="" aria-selected="true">تسجيل</a>	
+												</div><br>
+												<p class="text-white-50 mb-5"> : سـجـل مـعـلـومـاتــك </p>
+												<!--
+													<php 
+														require __DIR__ . '/template/header.php';
+														require 'auth/index.php';
+														login requirements
+														echo "<br>";
+														if(isset($_POST['submit'])){
+															$studentID=(filter_var($_POST['std_id'],FILTER_SANITIZE_STRING));
+															$password=(filter_var($_POST['password'],FILTER_SANITIZE_STRING));
+															$pass_hash=password_hash($password,PASSWORD_DEFAULT);
+															$fname=(filter_var($_POST['fname'],FILTER_SANITIZE_STRING));
+															$sname=(filter_var($_POST['sname'],FILTER_SANITIZE_STRING));
+															$lname=(filter_var($_POST['lname'],FILTER_SANITIZE_STRING));
+															$email=(filter_var($_POST['lname'],FILTER_SANITIZE_STRING));
+															$qinsert = "insert into students(student_id,F_name,S_name,L_name,specialization,email,password,member_type,club,status) 
+															values('$studentID','$fname','$sname','$lname','$_POST[college]','$email','$pass_hash','5','$_POST[club]',1)";
+															$qIns = mysqli_query($con,$qinsert);
+															if($qIns){
+															echo "<script>alert('تم انشاء حسابك بنجاح')</script>";
+															echo "<script>location.href='index'</script>";
+															}else{
+															echo "<script>alert('يُرجى التأكد من البيانات المدخلة والمحاولة لاحقا')</script>";
+															}
+														}
+														$sql_check="select club_id as ci,name_club as cn from club";
+														$quCheck = mysqli_query($con,$sql_check);
+														$sql_coll="select college_name as cc,id as id from college";
+														$qucoll= mysqli_query($con,$sql_coll);
+														}else{
+															$fail_login= "<div class='alert alert-danger'>عذراً ، خطأ في بريدك الإلكتروني أو كلمة المرور</div>";
+														}
+													?>-->
+												
+												<form action="login.php" method="POST" action="welcome.php" method="post">
+												<div class="form-outline form-white mb-4" dir="rtl">
+													<label class="form-label" for="FristName">الاسم الاول</label>
+													<input type="text" name="fname" placeholder="" id="typEmail" class="form-control form-control-lg" required>
+												</div>
+
+												<div class="form-outline form-white mb-4">
+													<label class="form-label" for="FristName">الاسم الثاني</label>
+													<input type="text" name="sname" placeholder="" id="typEmail" class="form-control form-control-lg" required>
+												</div>
+
+												<div class="form-outline form-white mb-4">
+													<label class="form-label" for="FristName">الاسم الاخير</label>
+													<input type="text" name="lname" placeholder="" id="typEmail" class="form-control form-control-lg" required>
+												</div>
+
+												<div class="form-outline form-white mb-4">
+													<label class="form-label" for="FristName"> الرقم الجامعي </label>
+													<input type="number" name="std_id" maxlength="10" placeholder=""  class="form-control form-control-lg" required>
+												</div>
+
+												<div class="form-outline form-white mb-4">
+													النادي / القسم
+													<select name="club" class="form-control form-control-lg">
+													<!--
+														<php while($rowv=mysqli_fetch_array($quCheck)){
+																$club_id = $rowv['ci'];
+																$club_name = $rowv['cn'];   
+															echo "<option value='$club_id'>$club_name</option>";
+														}  
+														?>-->
+													
+													</select>
+												</div>
+												<div class="form-white mb-4 ">
+													الكلية 
+													<select name="college" class="form-control form-control-lg">
+													<!--
+														<php while($rowvs=mysqli_fetch_array($qucoll)){
+															$college_name = $rowvs['cc'];
+															$id_college = $rowvs['id'];            
+
+															echo "<option value='$id_college'>$college_name</option>";
+														}
+														?>-->
+													</select>
+												</div>
+												<div class="form-outline form-white mb-4">
+													<label class="form-label" for="FristName"> البريد الالكتروني </label>
+													<input type="email" name="email" placeholder="" id="typEmail"  class="form-control form-control-lg" required>
+												</div>
+												<div class="form-outline form-white mb-4">
+													<label class="form-label" for="FristName"> كلمة المرور </label>
+													<input type="password" name="password" placeholder="" id="typEmail" class="form-control form-control-lg" required>
+												</div>
+												<input class="btn btn-outline-light btn-lg px-5" type="submit" name="submit" value="تسجيل"><br><br>
+												<!--
+													<div>
+														<p class="mb-0"> هل لديك حساب؟ <a href="index" class="text-white-50 fw-bold text-decorion-none"> تسجيل الدخول </a></p>
+													</div>
+												-->
+												<!---
+													<a href="https://twitter.com/u_tabuk?lang=ar"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+													<a href="https://www.snapchat.com/add/u_tabuk"> <i class="fa fa-snapchat" aria-hidden="true"></i></a>
+													<a href="https://instagram.com/u_tabuk?igshid=YmMyMTA2M2Y="> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+												-->
+												<div class="groupbox" id="remember1" onclick="(document.getElementById('remember1').classList.toggle('active'))">
+													<input type="checkbox" name="item" id="item1" /> <span class="text-checkbox">تذكرني</span>
+												</div>
+												<div class="groupbox" id="subscribe1" onclick="(document.getElementById('subscribe1').classList.toggle('active'))">
+													<input type="checkbox" name="item" id="item2" /> <span class="text-checkbox"> الأشتراك بالاعلانات</span>
+												</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</main>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.form.min.js"></script>
+	<script src="js/jquery.countdown.min.js"></script>
+	<script src="js/granim.min.js"></script>
+	<script src="js/vegas.min.js"></script>
+	<script src="js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active";
+		}
+		function check($id, $item){
+		document.getElementById($id).addClass('checkedClass');
+		document.getElementById($item).addAttribute('checked');
+		}
+ 	</script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
+	</from></from></from>
